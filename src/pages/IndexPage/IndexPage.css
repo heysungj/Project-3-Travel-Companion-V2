@@ -1,16 +1,15 @@
 .index-container {
     display: flex;
     flex-direction: column;
-    margin-top: 24vh;
+    margin-top: 4vh;
     align-items: center;
+    overflow-y: auto;
+    width: 100%;
+    /* flex-wrap: wrap; */
 }
 .index-container h1 {
     margin-bottom: 0;
 }
-
-favorite-place-container {
-    border: none;
-    margin: 5px;
-    width: 25%;
-
+.index-container h3 {
+    margin-bottom: 2em;
 }
