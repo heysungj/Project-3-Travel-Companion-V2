@@ -79,20 +79,23 @@ export default function TripOrder({ trip }) {
             <p>Check-in: {trip.checkIn.slice(0, 10)} Check-out: {trip.checkOut.slice(0, 10)}</p>
             <p>Total Price: {trip.totalPrice}</p>
             <p>Number of Guests: {trip.numberOfPeople}</p>
-            {!disabled && <>
-            <button onClick={() => {
-                handleCancelBtn(trip._id)
-                //This re-renders the component through useNavigate
-                navigate(0)
-            }}>
-                Cancel This Trip
-            </button>
-            <h3>Want to Choose a New Room at the Same Hotel?</h3>
-                <button onClick={() => { setShowRooms(!showRooms) }}>
-                    Edit Your Stay at {trip.hotelName}
-                </button>
-            </>}
+            {!disabled
+                ? <div className='edit'>
+                    <button onClick={() => {
+                        handleCancelBtn(trip._id)
+                        //This re-renders the component through useNavigate
+                        navigate(0)
+                    }}>
+                        Cancel This Trip
+                    </button>
+                    <button onClick={() => { setShowRooms(!showRooms) }}>
+                        Edit Your Stay at {trip.hotelName}
+                    </button>
+                </div>
+                : <div className='no-edit'>You are unable to alter a reservation with a check-in date in the past</div>
+            }
             {showRooms && <>
+                <h3>Search for Rooms at the Same Hotel</h3>
                 <div className="flex-row">
                     <div>
                         <label>Check In</label>
@@ -136,8 +139,8 @@ export default function TripOrder({ trip }) {
                         Search for Rooms
                     </button>
                 </div>
-                <h3>Select a New Room For Your Reservation</h3>
                 {rooms &&
+
                     rooms.map((room, index) => {
                         return (
                             <div key={index}>
