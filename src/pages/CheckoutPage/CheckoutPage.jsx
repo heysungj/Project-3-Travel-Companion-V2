@@ -38,26 +38,28 @@ export default function CheckoutPage() {
   };
 
   return (
-    <div className="mainContainer">
-      <h1>Check Out Page</h1>
+    <div className="checkoutMainContainer">
+      <h1 style={{ color: "#0071c2" }}>Check Out Page</h1>
       <div className="checkoutContainer">
         <div className="leftContainer">
-          <div>
+          <div className="bookingDetail">
             <h3>Your Booking Details</h3>
-            <h5>Check-in</h5>
+            <p>Check-in</p>
             <h4>{checkIn}</h4>
-            <h5>Check-out</h5>
+            <p>Check-out</p>
             <h4>{checkOut}</h4>
-            <h5>You selected</h5>
-            <p>{room.name}</p>
+            <p>You selected</p>
+            <h4>{room.name}</h4>
             <Link
               to={`/hotels/${hotel_id}?checkin=${checkIn}&checkout=${checkOut}&numberOfPerson=${numberOfPerson}`}
             >
-              <button className="link">Change Your Selection</button>
+              <button className="link" style={{ fontWeight: "500" }}>
+                Change Your Selection
+              </button>
             </Link>
           </div>
 
-          <div>
+          <div className="priceDetail">
             <h4>Your Price Summary</h4>
             <h5>Total $ {room.price_breakdown.gross_price}</h5>
 
@@ -65,14 +67,18 @@ export default function CheckoutPage() {
           </div>
         </div>
         <div className="rightContainer">
-          <div>
-            <h2>{hotel.name}</h2>
-            <img src={hotelPhoto} alt="" />
-            <p style={{ color: "#008009" }}>
-              {hotel.address}, {hotel.city}, {hotel.zip}
-            </p>
-            <button className="reviewBtn">{hotel.review_score}/10 </button>
-            <h5>{hotel.review_score_word}</h5>
+          <div className="hotelInfoContainer">
+            <div className="checkoutHotelImg">
+              <img src={hotelPhoto} alt="" />
+            </div>
+            <div>
+              <h2>{hotel.name}</h2>
+              <p style={{ color: "#008009" }}>
+                {hotel.address}, {hotel.city}, {hotel.zip}
+              </p>
+              <button className="reviewBtn">{hotel.review_score}/10 </button>
+              <h5>{hotel.review_score_word}</h5>
+            </div>
           </div>
           <form onSubmit={async (e) => handlePay(e)}>
             <div className="cardContainer">
