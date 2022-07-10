@@ -50,56 +50,58 @@ export default function ShowPageSearchBar({
   };
 
   return (
-    <>
-      <div className="flex-row">
-        <div>
-          <label>Check In</label>
-          <input
-            type="date"
-            name="checkIn"
-            value={data.checkIn}
-            onChange={changeData}
-            required
-          />
-        </div>
-        <div>
-          <label>Check Out</label>
-          <input
-            type="date"
-            name="checkOut"
-            value={data.checkOut}
-            onChange={changeData}
-            required
-          />
-        </div>
-        <div>
-          <label>Number of People</label>
-
-          <input
-            type="number"
-            name="numberOfAdult"
-            value={data.numberOfAdult}
-            onChange={changeData}
-            required
-          />
-        </div>
-        {/* onClick function sets the state of the rooms to the new input arguments */}
-        <button
-          disabled={disabled}
-          onClick={() =>
-            fetchApi.getRoomDetails(
-              data.checkIn,
-              data.checkOut,
-              data.numberOfAdult,
-              hotel_id,
-              setRoomPhoto,
-              setRooms
-            )
-          }
-        >
-          Modify Your Search
-        </button>
+    <div className="listSearch">
+      <div>
+        <label>Check In</label>
+        <input
+          className="SearchInput"
+          type="date"
+          name="checkIn"
+          value={data.checkIn}
+          onChange={changeData}
+          required
+        />
       </div>
-    </>
+      <div>
+        <label>Check Out</label>
+        <input
+          className="SearchInput"
+          type="date"
+          name="checkOut"
+          value={data.checkOut}
+          onChange={changeData}
+          required
+        />
+      </div>
+      <div>
+        <label>Number of People</label>
+
+        <input
+          className="SearchInput"
+          type="number"
+          name="numberOfAdult"
+          value={data.numberOfAdult}
+          onChange={changeData}
+          required
+        />
+      </div>
+      {/* onClick function sets the state of the rooms to the new input arguments */}
+      <button
+        className="searchBtn"
+        disabled={disabled}
+        onClick={() =>
+          fetchApi.getRoomDetails(
+            data.checkIn,
+            data.checkOut,
+            data.numberOfAdult,
+            hotel_id,
+            setRoomPhoto,
+            setRooms
+          )
+        }
+      >
+        Modify Your Search
+      </button>
+    </div>
   );
 }

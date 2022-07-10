@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import * as ordersAPI from "../../utilities/tripOrders-api";
 import ShowPageSearchBar from "../../components/ShowPageSearchBar/ShowPageSearchBar";
 import Map from "../../components/Map/Map";
-
+import "./HotelShowPage.css";
 export default function HotelShowPage() {
   // hotel data
   const [hotel, setHotel] = useState({});
@@ -71,7 +71,7 @@ export default function HotelShowPage() {
   };
 
   return (
-    <>
+    <div className="showPageMainContainer">
       <ShowPageSearchBar
         checkIn={checkIn}
         checkOut={checkOut}
@@ -89,44 +89,56 @@ export default function HotelShowPage() {
         checkOut={checkOut}
         numberOfPerson={numberOfPerson}
       />
-      <h1>{hotel.name}</h1>
+      <h2>{hotel.name}</h2>
       {/* <span>{description.description}</span> */}
-      <h3>
+      <h5 className="reviewScore">
         Review Score: {hotel.review_score}/10: {hotel.review_score_word}
-      </h3>
-      <h3>Address:</h3>
-      <p>{hotel.address}</p>
-      <p>
-        {hotel.city}, {hotel.zip}
-      </p>
-      <div>
+      </h5>
+      <div className="hotelAddress">
+        <h3>Address:</h3>
+        <p>{hotel.address}</p>
+        <p>
+          {hotel.city}, {hotel.zip}
+        </p>
+      </div>
+      <div className="hotelPhotos">
         {photos &&
           photos.map((photo, index) => {
-            return <img src={photo.url_1440} key={index} alt="" />;
+            return (
+              <img
+                src={photo.url_1440}
+                key={index}
+                alt=""
+                className="hotelPhoto"
+              />
+            );
           })}
       </div>
-
       {rooms &&
         rooms.map((room, index) => {
           return (
-            <div key={index}>
-              <img
-                src={roomPhoto[room.room_id].photos[0].url_original}
-                alt=""
-              />
-              <h4>{room.name}</h4>
-              <h4>Max Occupancy: {room.max_occupancy}</h4>
-              <h3>
-                per night $
-                {room.product_price_breakdown.gross_amount_per_night.value.toFixed(
-                  2
-                )}
-              </h3>
-              <h4>Total Cost: $ {room.price_breakdown.gross_price}</h4>
-              <button onClick={() => handleClick(room)}>Select</button>
+            <div key={index} className="roomList">
+              <div className="roomPhoto">
+                <img
+                  src={roomPhoto[room.room_id].photos[0].url_original}
+                  alt=""
+                />
+              </div>
+              <div className="roomDetail">
+                <h4>{room.name}</h4>
+                <h4>Max Occupancy: {room.max_occupancy}</h4>
+                <h3>
+                  per night $
+                  {room.product_price_breakdown.gross_amount_per_night.value.toFixed(
+                    2
+                  )}
+                </h3>
+                <h4>Total Cost: $ {room.price_breakdown.gross_price}</h4>
+                <button onClick={() => handleClick(room)}>Select</button>
+              </div>
             </div>
           );
         })}
-    </>
+    </div>
   );
 }
