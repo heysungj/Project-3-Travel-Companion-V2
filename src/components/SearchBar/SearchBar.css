@@ -3,9 +3,6 @@
     color: white;
     display: flex;
     justify-content: center;
-    position: absolute;
-    bottom: -1.5em;
-    margin-top:15px;
 }
 
 .headerBtn{

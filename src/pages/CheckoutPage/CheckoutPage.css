@@ -1,10 +1,67 @@
-.flex-column{
-    display: flex;
-    flex-direction: column;
-}
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+.checkoutMainContainer{
+  display: flex;
+  flex-direction: column;
+}
+
+.checkoutContainer{
+  display: flex;
+  flex-direction: row;
+}
+
+.leftContainer{
+  display: flex;
+  flex-direction: column;
+}
+
+.link{
+  color:#0071c2;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+}
+.rightContainer{
+  display: flex;
+  flex-direction: column;
+}
+.reviewBtn{
+  background-color: #0071c2;
+  border: none;
+  border-radius: 2%;
+  width: 4em;
+  height: 4em;
+  color: white;
+  font-weight: 500;
+}
+
+.cardContainer{
+  background-color: #ebf3ff;
+  display: flex;
+  flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+.cardInput{
+  border: none;
+  padding: 0.5em;
+  width: 16em;
+  margin: 0.5em;
+}
+
+.payBtn{
+  background-color: #0071c2;
+  color: white;
+  font-weight: 500;
+  border:none;
+  padding: 12px;
+  cursor:pointer;
+  width: 20em;
+  margin: 0.5em;
 }
