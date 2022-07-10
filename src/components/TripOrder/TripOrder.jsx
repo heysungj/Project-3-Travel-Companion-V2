@@ -62,9 +62,9 @@ export default function TripOrder({ trip }) {
         await ordersAPI.updateTrip(
             trip.id,
             room,
-            checkIn,
-            checkOut,
-            people
+            data.checkIn,
+            data.checkOut,
+            data.people
         )
     }
     const changeData = (e) => {
@@ -75,7 +75,7 @@ export default function TripOrder({ trip }) {
         setData(newData);
     };
 
-
+    console.log(trip)
     return (
 
         <div className="favorite-place-container">
@@ -99,6 +99,7 @@ export default function TripOrder({ trip }) {
                                 <button
                                     className='searchBtn'
                                     onClick={async () => {
+                                        await setShowRooms(!showRooms)
                                         await fetchAPI.getRoomDetails(
                                             checkIn,
                                             checkOut,
@@ -106,7 +107,6 @@ export default function TripOrder({ trip }) {
                                             trip.hotelId,
                                             setRoomPhoto,
                                             setRooms)
-                                        await setShowRooms(!showRooms)
                                     }}>
                                     Edit Your Reservation
                                 </button>
@@ -198,6 +198,10 @@ export default function TripOrder({ trip }) {
                                         />
                                         <div>
                                             <h3>{room.name}</h3>
+                                            <h4>Check-in: {data.checkIn}</h4>
+                                            <h4>Check-out: {data.checkOut}</h4>
+                                            <br />
+                                            <h4>Guests in Your Party: {data.people}</h4>
                                             <h4>Max Occupancy: {room.max_occupancy}</h4>
                                             <h4>Total Cost: $ {room.price_breakdown.gross_price}</h4>
                                         </div>
