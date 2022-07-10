@@ -1,13 +1,11 @@
 .listSearch {
     display: flex;
-    position: relative;
-    top: 21vh;
+
     flex-direction: column;
     background-color: #febb02;
     height: 35vh;
     width: 30vh;
     border-radius: 1%;
-    
 }
 
 .SearchInput{
@@ -27,6 +25,7 @@
     width: 20em;
     margin: 0.5em;
 }
+
 label {
     display: block;
     text-align: center;

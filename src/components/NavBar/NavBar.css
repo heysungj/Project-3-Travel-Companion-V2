@@ -1,26 +1,18 @@
 .navBar {
-    display: flex; 
+    display: flex;
+    flex: 0 0 auto;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 20vh;
-    width: 100%;
     background-color: #003580;
-    margin-top: 0;
-    position: fixed;
-    top:0;
+    color: white;
 }
-
 
 .navContainer{
     width: 100%;
     display: flex;
-    max-width: 1024px;
     color: white;
-    flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    
+    padding: 0 10px;
 }
 .logo{
     font-weight: 500;

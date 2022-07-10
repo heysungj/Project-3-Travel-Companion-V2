@@ -1,3 +1,10 @@
+.mainContainer {
+    flex-direction: column;
+    flex: 1 1 auto;
+    position: relative;
+    overflow-y: auto;
+}
+
 .listWrapper{
     display: flex;
     flex-direction: column;
@@ -11,8 +18,8 @@
     align-items: center;
 }
 
-reviewScore{
-color:#0071c2;
+.reviewScore{
+    color:#0071c2;
 }
 .hotelContainer{
     top: 21vh;
@@ -25,7 +32,7 @@ color:#0071c2;
     flex-wrap: wrap;
 }
 
-hotelPhoto{
+.hotelPhoto{
     width: 20em;
     height: 20em;
 }
