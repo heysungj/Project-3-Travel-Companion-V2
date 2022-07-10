@@ -185,6 +185,7 @@ export default function SearchBar() {
               value={data.numberOfAdult}
               onChange={changeData}
               placeholder="Number of people"
+              style={{ width: "2em"}}
               required
             />
             {/* <button onClick={handleClickAdd}>+</button> */}

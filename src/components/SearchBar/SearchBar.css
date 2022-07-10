@@ -21,12 +21,12 @@
     border: 3px solid #febb02;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     padding: 10px 10px;
     border-radius: 5px;
     /* position:fixed; */
     /* bottom: -25px; */
-    width: 100%;
+    width: 50vw;
     flex-wrap: wrap;
 }
 
@@ -43,4 +43,8 @@
 .headerSearchInput{
     /* color: lightgray; */
     border: none;
+}
+
+.people {
+    width: 1em !important;
 }

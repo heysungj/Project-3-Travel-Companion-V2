@@ -1,9 +1,9 @@
 import './TripOrder.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faCalendarDays,
-  faPerson,
-  faBed,
+    faCalendarDays,
+    faPerson,
+    faBed,
 } from "@fortawesome/free-solid-svg-icons";
 import * as ordersAPI from "../../utilities/tripOrders-api";
 import { useNavigate } from "react-router-dom";
@@ -77,38 +77,51 @@ export default function TripOrder({ trip }) {
 
 
     return (
-        <div className="tripOrder-container">
-            <h2>{trip.hotelName}</h2>
-            <h3>{trip.roomName}</h3>
-            <img src={trip.hotelPhoto} alt="" />
+        <div className="favorite-place-container">
+            <div className="favPlaceLeftCol">
+                <h2>{trip.hotelName}</h2>
+                {/* if check-in date isn't in the past, you can delete/edit */}
+                {!disabled
+                    ? <div className='edit'>
+                        <button
+                            className='searchBtn'
+                            onClick={() => {
+                                handleCancelBtn(trip._id)
+                                //This re-renders the component through useNavigate
+                                navigate(0)
+                            }}>
+                            Cancel This Trip
+                        </button>
+                        <button
+                            className='searchBtn'
+                            onClick={() => { setShowRooms(!showRooms) }}>
+                            Edit Your Reservation
+                        </button>
+                    </div>
+                    : <div className='no-edit'>You are unable to alter a reservation with a check-in date in the past</div>
+                }
+            </div>
+            <div className="favPlaceMidCol">
+                <h3>{trip.roomName}</h3>
+                <h4>Check-in: {trip.checkIn.slice(0, 10)} </h4>
+                <h4>Check-out: {trip.checkOut.slice(0, 10)}</h4>
+                <p>Total Price: {trip.totalPrice}</p>
+                <p>Number of Guests: {trip.numberOfPeople}</p>
+            </div>
+            <div className="hotel-container">
+                <h3 className="hotelH3">Your accomodation</h3>
+                <img src={trip.hotelPhoto} alt="" />
+            </div>
+
             <p></p>
-            <p>Check-in: {trip.checkIn.slice(0, 10)} Check-out: {trip.checkOut.slice(0, 10)}</p>
-            <p>Total Price: {trip.totalPrice}</p>
-            <p>Number of Guests: {trip.numberOfPeople}</p>
-            {!disabled
-                ? <div className='edit'>
-                    <button 
-                    className='cancelBtn'
-                    onClick={() => {
-                        handleCancelBtn(trip._id)
-                        //This re-renders the component through useNavigate
-                        navigate(0)
-                    }}>
-                        Cancel This Trip
-                    </button>
-                    <button 
-                    className='headerBtn'
-                    onClick={() => { setShowRooms(!showRooms) }}>
-                        Edit Your Reservation
-                    </button>
-                </div>
-                : <div className='no-edit'>You are unable to alter a reservation with a check-in date in the past</div>
-            }
+
+
+
             {showRooms && <div className='edit-container'>
                 <h3>Choose Your Room at {trip.hotelName}</h3>
                 <div className="roomSearchBar">
                     <div className='searchItem'>
-                    <FontAwesomeIcon icon={faCalendarDays} className="headerIcon" />
+                        <FontAwesomeIcon icon={faCalendarDays} className="headerIcon" />
                         <input
                             className='headerSearchInput'
                             type="date"
@@ -120,7 +133,7 @@ export default function TripOrder({ trip }) {
                         />
                     </div>
                     <div className='searchItem'>
-                    <FontAwesomeIcon icon={faCalendarDays} className="headerIcon" />
+                        <FontAwesomeIcon icon={faCalendarDays} className="headerIcon" />
                         <input
                             className='headerSearchInput'
                             type="date"
@@ -132,9 +145,9 @@ export default function TripOrder({ trip }) {
                         />
                     </div>
                     <div className='searchItem'>
-                    <FontAwesomeIcon icon={faPerson} className="headerIcon" />
+                        <FontAwesomeIcon icon={faPerson} className="headerIcon" />
                         <input
-                        className='headerSearchInput'
+                            className='headerSearchInput'
                             type="number"
                             name="people"
                             value={data.people}
@@ -143,19 +156,19 @@ export default function TripOrder({ trip }) {
                         />
                     </div>
                     <div className='searchItem'>
-                    <button 
-                    className='headerBtn'
-                    onClick={() =>
-                        fetchAPI.getRoomDetails(
-                            data.checkIn,
-                            data.checkOut,
-                            data.people,
-                            trip.hotelId,
-                            setRoomPhoto,
-                            setRooms)
-                    }>
-                        Search
-                    </button>
+                        <button
+                            className='headerBtn'
+                            onClick={() =>
+                                fetchAPI.getRoomDetails(
+                                    data.checkIn,
+                                    data.checkOut,
+                                    data.people,
+                                    trip.hotelId,
+                                    setRoomPhoto,
+                                    setRooms)
+                            }>
+                            Search
+                        </button>
                     </div>
                 </div>
                 {rooms.length
@@ -170,9 +183,9 @@ export default function TripOrder({ trip }) {
                                 <h4>{room.name}</h4>
                                 <h4>Max Occupancy: {room.max_occupancy}</h4>
                                 <h4>Total Cost: $ {room.price_breakdown.gross_price}</h4>
-                                <button 
-                                className='headerBtn'
-                                onClick={() => { handleEdit(room) }}>
+                                <button
+                                    className='headerBtn'
+                                    onClick={() => { handleEdit(room) }}>
                                     Change to This Room
                                 </button>
                             </div>
