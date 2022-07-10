@@ -1,0 +1,37 @@
+.listWrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.topWrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+reviewScore{
+color:#0071c2;
+}
+.hotelContainer{
+    top: 21vh;
+    position: relative;
+}
+
+.hotelPhotos{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+hotelPhoto{
+    width: 20em;
+    height: 20em;
+}
+
+.hotelAddress{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}

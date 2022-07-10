@@ -1,5 +1,8 @@
 .map-container {
-    width: 200px;
-    height: 200px;
+    position: relative;
+    overflow: hidden;
+    top: 25vh;
+    width: 30vh;
+    height: 25vh;
   
 }
