@@ -170,13 +170,15 @@ export default function TripOrder({ trip }) {
                                 <h4>{room.name}</h4>
                                 <h4>Max Occupancy: {room.max_occupancy}</h4>
                                 <h4>Total Cost: $ {room.price_breakdown.gross_price}</h4>
-                                <button onClick={() => { handleEdit(room) }}>
+                                <button 
+                                className='headerBtn'
+                                onClick={() => { handleEdit(room) }}>
                                     Change to This Room
                                 </button>
                             </div>
                         );
                     })
-                    : <p>Sorry, no available rooms for those dates</p>}
+                    : <p className='no-edit'>Sorry, no available rooms for those dates</p>}
             </div>}
         </div>
     )
