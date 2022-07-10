@@ -1,8 +1,4 @@
 .map-container {
-    position: relative;
-    overflow: hidden;
-    top: 25vh;
     width: 30vh;
     height: 25vh;
-  
 }

@@ -71,10 +71,7 @@ export default function HotelShowPage() {
   };
 
   return (
-    <div className="listContainer">
-      <div className="listWrapper">
-        <div className="topWrapper">
-          <div>
+    <div className="mainContainer">
             <ShowPageSearchBar
               checkIn={checkIn}
               checkOut={checkOut}
@@ -92,8 +89,6 @@ export default function HotelShowPage() {
               checkOut={checkOut}
               numberOfPerson={numberOfPerson}
             />
-          </div>
-          <div className="hotelContainer">
             <h2>{hotel.name}</h2>
             {/* <span>{description.description}</span> */}
             <h5 className="reviewScore">
@@ -119,8 +114,6 @@ export default function HotelShowPage() {
                   );
                 })}
             </div>
-          </div>
-        </div>
         {rooms &&
           rooms.map((room, index) => {
             return (
@@ -146,7 +139,6 @@ export default function HotelShowPage() {
               </div>
             );
           })}
-      </div>
     </div>
   );
 }
