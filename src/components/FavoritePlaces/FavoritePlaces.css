@@ -9,6 +9,7 @@
     border-radius: 10px;
     padding: 1em;
     margin-bottom: 1.3em;
+    background-color: white;
 }
 
 .favPlaceLeftCol {
@@ -46,8 +47,12 @@
 .img-absolute {
     position: absolute;
     width: 100%;
+    color: #003580;
     color: white;
-    bottom: 2.2em;
+    background-color: #003580;
+    border: 1px solid #febb02;
+    padding: .2em;
+    bottom: 0em;
     /* left: 1em; */
     text-align: center;
     /* font-size: 1em; */

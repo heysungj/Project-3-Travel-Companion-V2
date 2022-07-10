@@ -19,7 +19,7 @@ export default function AccountPage({ user }) {
     return (!tripOrders ? <div className="no-orders">You Have Not Purchased Any Trips</div> :
         <div className="index-container">
             <h3>Greetings, {user.name}</h3>
-            <h1>Your Purchased Trips:</h1>
+            <h1>Your Order History</h1>
             <TripOrderList tripOrders={tripOrders} />
         </div>
     )

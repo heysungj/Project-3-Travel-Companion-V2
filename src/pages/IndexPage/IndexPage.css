@@ -8,9 +8,9 @@
     /* flex-wrap: wrap; */
 }
 .index-container h1 {
-    margin-bottom: 0;
+    margin-bottom: 1em;
 }
 .index-container h3 {
-    margin-bottom: 2em;
+    margin-bottom: .5em;
     color: #0071c2;
 }

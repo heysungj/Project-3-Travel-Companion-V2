@@ -85,6 +85,7 @@ export default function TripOrder({ trip }) {
                     ? <div className='edit'>
                         <button
                             className='searchBtn'
+                            style={{backgroundColor:"#ff4d4d"}}
                             onClick={() => {
                                 handleCancelBtn(trip._id)
                                 //This re-renders the component through useNavigate
@@ -105,11 +106,13 @@ export default function TripOrder({ trip }) {
                 <h3>{trip.roomName}</h3>
                 <h4>Check-in: {trip.checkIn.slice(0, 10)} </h4>
                 <h4>Check-out: {trip.checkOut.slice(0, 10)}</h4>
-                <p>Total Price: {trip.totalPrice}</p>
-                <p>Number of Guests: {trip.numberOfPeople}</p>
+                <br />
+                <h4>Total Price: {trip.totalPrice}</h4>
+                <br />
+                <h4>Number of Guests: {trip.numberOfPeople}</h4>
             </div>
             <div className="hotel-container">
-                <h3 className="hotelH3">Your accomodation</h3>
+                <h3 className="hotelH3">Your Accommodation</h3>
                 <img src={trip.hotelPhoto} alt="" />
             </div>
 
