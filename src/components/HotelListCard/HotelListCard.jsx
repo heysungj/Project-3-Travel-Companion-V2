@@ -17,8 +17,16 @@ export default function HotelListCard({
       <div className="favPlaceLeftCol">
 
         <h2>{hotel.hotel_name}</h2>
+        <br />
         <h3>Review Score: {hotel.review_score}</h3>
+      </div>
+      <div className="favPlaceMidCol">
+        <h4>{hotel.address}</h4>
+        <h4>{hotel.city}, {hotel.zip}</h4>
+        <br />
+        <p>*{hotel.is_free_cancellable ? "Free cancellation" : ""}</p>
         <button
+        className="searchBtn"
           onClick={() => {
             navigate(
               `/hotels/${hotel.hotel_id}?checkin=${checkIn}&checkout=${checkOut}&numberOfPerson=${numberOfPerson}`,
@@ -32,15 +40,6 @@ export default function HotelListCard({
         >
           Check Availability
         </button>
-      </div>
-      <div className="favPlaceMidCol">
-        <h2>
-          {hotel.currency_code}{" "}$
-          {hotel.composite_price_breakdown.gross_amount_per_night.value.toFixed(
-            0
-          )}
-        </h2>
-        <p>{hotel.is_free_cancellable ? "Free cancellation" : ""}</p>
       </div>
       <div className="hotel-container">
       <img 

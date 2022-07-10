@@ -21,7 +21,7 @@ export default function HotelShowPage() {
   const { hotel_id } = useParams();
   const { state } = useLocation();
   let { markers } = state;
-  console.log(markers);
+  // console.log(markers);
   const [marker, setMarkers] = useState([markers.marker]);
   const [lat, setLat] = useState(marker[0].lat);
   const [lng, setLng] = useState(marker[0].lng);
@@ -46,9 +46,9 @@ export default function HotelShowPage() {
 
   // handle onclick
   const handleClick = async (room) => {
-    console.log(room);
+    // console.log(room);
     let hotelPhoto = photos[0].url_1440;
-    console.log(room);
+    // console.log(room);
     const updatedCart = await ordersAPI.addHotelToCart(
       hotel,
       room,

@@ -12,7 +12,7 @@ export default function HotelsListPage() {
   const { searchResult, checkIn, checkOut, coordinates, numberOfPerson } =
     state;
   const [markers, setMarkers] = useState([]);
-  // console.log(searchResult)
+  console.log(searchResult)
   useEffect(() => {
 
     (() => {
