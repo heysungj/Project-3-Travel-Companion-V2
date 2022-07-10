@@ -159,7 +159,7 @@ export default function SearchBar() {
               name="checkIn"
               value={data.checkIn}
               onChange={changeData}
-              placeholder="Checkin Date"
+              placeholder="Check-in Date"
               required
             />
           </div>

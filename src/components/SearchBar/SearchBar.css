@@ -3,10 +3,7 @@
     color: white;
     display: flex;
     justify-content: center;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    right: 50%;
+    flex-wrap: wrap;
 }
 
 .headerBtn{
@@ -16,20 +13,21 @@
     border:none;
     padding: 10px;
     cursor:pointer;
+    border-radius: 5px;
 }
+
 .headerSearch{
-    height:30px;
     background-color: white;
-    border:3px solid #febb02;
+    border: 3px solid #febb02;
     display: flex;
     align-items: center;
     justify-content: space-around;
     padding: 10px 10px;
     border-radius: 5px;
     /* position:fixed; */
-    bottom: -25px;
+    /* bottom: -25px; */
     width: 100%;
-    max-width: 1024px;
+    flex-wrap: wrap;
 }
 
 .headerIcon{
