@@ -1,0 +1,16 @@
+.index-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 24vh;
+    align-items: center;
+}
+.index-container h1 {
+    margin-bottom: 0;
+}
+
+favorite-place-container {
+    border: none;
+    margin: 5px;
+    width: 25%;
+
+}
