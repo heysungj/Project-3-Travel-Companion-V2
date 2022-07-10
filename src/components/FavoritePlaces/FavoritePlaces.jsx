@@ -3,7 +3,7 @@ import {
   markPlacesArr,
   jingPlacesArr,
   tirasPlacesArr,
-} from "./ourFavoritePlacesData";
+} from "../../utilities/ourFavoritePlacesData";
 import "./FavoritePlaces.css";
 const axios = require("axios");
 const API_KEY = process.env.REACT_APP_BOOKING_API_KEY;
