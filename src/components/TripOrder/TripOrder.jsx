@@ -98,7 +98,16 @@ export default function TripOrder({ trip }) {
                                 </button>
                                 <button
                                     className='searchBtn'
-                                    onClick={() => { setShowRooms(!showRooms) }}>
+                                    onClick={async () => {
+                                        await fetchAPI.getRoomDetails(
+                                            checkIn,
+                                            checkOut,
+                                            people,
+                                            trip.hotelId,
+                                            setRoomPhoto,
+                                            setRooms)
+                                        await setShowRooms(!showRooms)
+                                    }}>
                                     Edit Your Reservation
                                 </button>
                             </div>
@@ -121,42 +130,42 @@ export default function TripOrder({ trip }) {
                 </>
                 : <>
                     <div className="favPlaceLeftCol">
-                    <div className="listSearch">
-                        <div>
-                        <label>Check In</label>
-                            <input
-                                className='SearchInput'
-                                type="date"
-                                name="checkIn"
-                                value={data.checkIn}
-                                onChange={changeData}
-                                placeholder="Check-in Date"
-                                required
-                            />
-                        </div>
-                        <div>
-                        <label>Check Out</label>
-                            <input
-                                className='SearchInput'
-                                type="date"
-                                name="checkOut"
-                                value={data.checkOut}
-                                onChange={changeData}
-                                placeholder="Checkout Date"
-                                required
-                            />
-                        </div>
-                        <div>
-                        <label>Number of Guests</label>
-                            <input
-                                className='SearchInput'
-                                type="number"
-                                name="people"
-                                value={data.people}
-                                onChange={changeData}
-                                required
-                            />
-                        </div>
+                        <div className="listSearch">
+                            <div>
+                                <label>Check In</label>
+                                <input
+                                    className='SearchInput'
+                                    type="date"
+                                    name="checkIn"
+                                    value={data.checkIn}
+                                    onChange={changeData}
+                                    placeholder="Check-in Date"
+                                    required
+                                />
+                            </div>
+                            <div>
+                                <label>Check Out</label>
+                                <input
+                                    className='SearchInput'
+                                    type="date"
+                                    name="checkOut"
+                                    value={data.checkOut}
+                                    onChange={changeData}
+                                    placeholder="Checkout Date"
+                                    required
+                                />
+                            </div>
+                            <div>
+                                <label>Number of Guests</label>
+                                <input
+                                    className='SearchInput'
+                                    type="number"
+                                    name="people"
+                                    value={data.people}
+                                    onChange={changeData}
+                                    required
+                                />
+                            </div>
                             <button
                                 className='searchBtn'
                                 onClick={() =>
@@ -170,29 +179,39 @@ export default function TripOrder({ trip }) {
                                 }>
                                 Search
                             </button>
+                            <button
+                                className="searchBtn"
+                                onClick={() => setShowRooms(false)}>Go Back to Order</button>
                         </div>
                     </div>
-                    {rooms.length
-                        ?
-                        rooms.map((room, index) => {
-                            return (
-                                <div key={index}>
-                                    <img
-                                        src={roomPhoto[room.room_id].photos[0].url_original}
-                                        alt=""
-                                    />
-                                    <h4>{room.name}</h4>
-                                    <h4>Max Occupancy: {room.max_occupancy}</h4>
-                                    <h4>Total Cost: $ {room.price_breakdown.gross_price}</h4>
-                                    <button
-                                        className='headerBtn'
-                                        onClick={() => { handleEdit(room) }}>
-                                        Change to This Room
-                                    </button>
-                                </div>
-                            );
-                        })
-                        : <p className='no-edit'>Sorry, no available rooms for those dates</p>}
+                    <div className="edit-order-rooms">
+                        {rooms.length
+                            ?
+                            rooms.map((room, index) => {
+                                return (
+                                    <div
+                                        className="new-room"
+                                        key={index}>
+                                        <img
+                                            src={roomPhoto[room.room_id].photos[0].url_original}
+                                            alt=""
+                                        />
+                                        <div>
+                                            <h3>{room.name}</h3>
+                                            <h4>Max Occupancy: {room.max_occupancy}</h4>
+                                            <h4>Total Cost: $ {room.price_breakdown.gross_price}</h4>
+                                        </div>
+                                        <button
+                                            className='editBtn'
+                                            onClick={() => { handleEdit(room) }}>
+                                            Change to This Room
+                                        </button>
+                                    </div>
+                                );
+                            })
+                            : <p className='no-edit'>Sorry, no available rooms for those dates</p>}
+                    </div>
+
                 </>}
         </div>
 
