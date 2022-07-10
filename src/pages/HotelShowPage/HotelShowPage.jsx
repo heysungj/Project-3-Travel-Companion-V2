@@ -71,74 +71,74 @@ export default function HotelShowPage() {
   };
 
   return (
-    <div className="mainContainer">
-            <ShowPageSearchBar
-              checkIn={checkIn}
-              checkOut={checkOut}
-              numberOfPerson={numberOfPerson}
-              hotel_id={hotel_id}
-              setRoomPhoto={setRoomPhoto}
-              setRooms={setRooms}
-            />
-            {/* {photos && <img src={photos[0].url_1440} alt="" />}  */}
-            <Map
-              lat={lat}
-              lng={lng}
-              markers={marker}
-              checkIn={checkIn}
-              checkOut={checkOut}
-              numberOfPerson={numberOfPerson}
-            />
-            <h2>{hotel.name}</h2>
-            {/* <span>{description.description}</span> */}
-            <h5 className="reviewScore">
-              Review Score: {hotel.review_score}/10: {hotel.review_score_word}
-            </h5>
-            <div className="hotelAddress">
-              <h3>Address:</h3>
-              <p>{hotel.address}</p>
-              <p>
-                {hotel.city}, {hotel.zip}
-              </p>
-            </div>
-            <div className="hotelPhotos">
-              {photos &&
-                photos.map((photo, index) => {
-                  return (
-                    <img
-                      src={photo.url_1440}
-                      key={index}
-                      alt=""
-                      className="hotelPhoto"
-                    />
-                  );
-                })}
-            </div>
-        {rooms &&
-          rooms.map((room, index) => {
+    <div className="showPageMainContainer">
+      <ShowPageSearchBar
+        checkIn={checkIn}
+        checkOut={checkOut}
+        numberOfPerson={numberOfPerson}
+        hotel_id={hotel_id}
+        setRoomPhoto={setRoomPhoto}
+        setRooms={setRooms}
+      />
+      {/* {photos && <img src={photos[0].url_1440} alt="" />}  */}
+      <Map
+        lat={lat}
+        lng={lng}
+        markers={marker}
+        checkIn={checkIn}
+        checkOut={checkOut}
+        numberOfPerson={numberOfPerson}
+      />
+      <h2>{hotel.name}</h2>
+      {/* <span>{description.description}</span> */}
+      <h5 className="reviewScore">
+        Review Score: {hotel.review_score}/10: {hotel.review_score_word}
+      </h5>
+      <div className="hotelAddress">
+        <h3>Address:</h3>
+        <p>{hotel.address}</p>
+        <p>
+          {hotel.city}, {hotel.zip}
+        </p>
+      </div>
+      <div className="hotelPhotos">
+        {photos &&
+          photos.map((photo, index) => {
             return (
-              <div key={index} className="roomList">
-                <div className="roomPhoto">
-                  <img
-                    src={roomPhoto[room.room_id].photos[0].url_original}
-                    alt=""
-                  />
-                </div>
-                <div className="roomDetail">
-                  <h4>{room.name}</h4>
-                  <h4>Max Occupancy: {room.max_occupancy}</h4>
-                  <h3>
-                    per night $
-                    {room.product_price_breakdown.gross_amount_per_night.value.toFixed(
-                      2
-                    )}
-                  </h3>
-                  <h4>Total Cost: $ {room.price_breakdown.gross_price}</h4>
-                  <button onClick={() => handleClick(room)}>Select</button>
-                </div>
-              </div>
+              <img
+                src={photo.url_1440}
+                key={index}
+                alt=""
+                className="hotelPhoto"
+              />
             );
           })}
+      </div>
+      {rooms &&
+        rooms.map((room, index) => {
+          return (
+            <div key={index} className="roomList">
+              <div className="roomPhoto">
+                <img
+                  src={roomPhoto[room.room_id].photos[0].url_original}
+                  alt=""
+                />
+              </div>
+              <div className="roomDetail">
+                <h4>{room.name}</h4>
+                <h4>Max Occupancy: {room.max_occupancy}</h4>
+                <h3>
+                  per night $
+                  {room.product_price_breakdown.gross_amount_per_night.value.toFixed(
+                    2
+                  )}
+                </h3>
+                <h4>Total Cost: $ {room.price_breakdown.gross_price}</h4>
+                <button onClick={() => handleClick(room)}>Select</button>
+              </div>
+            </div>
+          );
+        })}
     </div>
   );
 }

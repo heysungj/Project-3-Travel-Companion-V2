@@ -5,7 +5,7 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-.mainContainer{
+.checkoutMainContainer{
   display: flex;
   flex-direction: column;
 }
