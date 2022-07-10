@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import './AccountPage.css'
 import * as tripOrdersAPI from '../../utilities/tripOrders-api'
 import TripOrderList from '../../components/TripOrderList/TripOrderList'
 
@@ -15,12 +16,11 @@ export default function AccountPage({ user }) {
     }, [])
 
 
-    return (
-        <>
+    return (!tripOrders ? <div className="no-orders">You Have Not Purchased Any Trips</div> :
+        <div className="tripOrders-list-container">
             <h3>Greetings, {user.name}</h3>
             <h1>Your Purchased Trips:</h1>
             <TripOrderList tripOrders={tripOrders} />
-            <h3>Edit Your Information</h3>
-        </>
+        </div>
     )
 }

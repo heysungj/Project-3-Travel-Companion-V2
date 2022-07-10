@@ -18,10 +18,10 @@ export const markPlacesArr = [
     testimonial: "Whale-watching, surfing, boat tours of the Marieta Islands, and mountain biking are just a few of the things that will keep you coming back to Sayulita over and over again!",
   },
   {
-    place: "El Chaltén, Santa Cruz Province, Argentina",
-    latitude: "-49.3314941",
-    longitude: "-72.886325",
-    testimonial: "Located inside the Glaciers National Park in Patagonia, you'll find mountain sports in a natural scenery like no other!",
+    place: "Buenos Aires, Argentina",
+    latitude: "-34.6036844",
+    longitude: "-58.3815591",
+    testimonial: "Referred to by some as the 'Paris of the Americas,' BA's rich culture and arts will leave you in awe. For the more adventurous travelers, Patagonia is a hop, skip, and a jump away.",
   }
 ];
 
