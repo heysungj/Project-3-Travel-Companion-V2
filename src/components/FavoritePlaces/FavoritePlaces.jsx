@@ -77,21 +77,40 @@ export default function FavoritePlaces() {
       await getRandomHotels(tirasPlace, setTirasHotel);
     })();
   }, []);
+  // The following useEffects updates a new hotel when a user clicks on Choose New Place button
+  useEffect(() => {
+    getRandomHotels(markPlace, setMarkHotel)
+  }, [markPlace]);
+  useEffect(() => {
+    getRandomHotels(jingPlace, setJingHotel)
+  }, [jingPlace]);
+  useEffect(() => {
+    getRandomHotels(tirasPlace, setTirasHotel)
+  }, [tirasPlace]);
 
   return (
     <main>
       <div className="favorite-place-container">
         <div className="favPlaceLeftCol">
         <h2>Mark's Suggestion:</h2>
-        <h5>{markPlace.place}</h5>
+        <h3>{markPlace.place}</h3>
+        <button 
+        className="searchBtn"
+        onClick={async() => {
+          setMarkPlace(getRandomPlace(markPlacesArr))
+        }}
+        >
+          Choose New Place</button>
+        <button 
+        className="searchBtn"
+        onClick={() => getRandomHotels(markPlace, setMarkHotel)}
+        >
+          Choose New Hotel</button>
         </div>
         <div className="favPlaceMidCol">
-        <h4>Why He Loves it There:</h4>
+        <h2>Why He Loves it There:</h2>
         <span>"{markPlace.testimonial}" -Mark</span>
         </div>
-        {/* <button onClick={() => getRandomHotels(markPlace, setMarkHotel)}>
-            Click For Random Hotel
-          </button> */}
         {/* If there is a hotel ID assigned to a person's hotel state, render the following jsx */}
         {markHotel ? (
           <div className="hotel-container">
@@ -109,26 +128,35 @@ export default function FavoritePlaces() {
       </div>
       <div className="favorite-place-container">
         <div className="favPlaceLeftCol">
-        <h2>Mark's Suggestion:</h2>
-        <h5>{markPlace.place}</h5>
+        <h2>Jing's Suggestion:</h2>
+        <h3>{jingPlace.place}</h3>
+        <button 
+        className="searchBtn"
+        onClick={async() => {
+          setJingPlace(getRandomPlace(jingPlacesArr))
+        }}
+        >
+          Choose New Place</button>
+        <button 
+        className="searchBtn"
+        onClick={() => getRandomHotels(jingPlace, setJingHotel)}
+        >
+          Choose New Hotel</button>
         </div>
         <div className="favPlaceMidCol">
-        <h4>Why He Loves it There:</h4>
-        <span>"{markPlace.testimonial}" -Mark</span>
+        <h2>Why She Loves it There:</h2>
+        <span>"{jingPlace.testimonial}" -Jing</span>
         </div>
-        {/* <button onClick={() => getRandomHotels(markPlace, setMarkHotel)}>
-            Click For Random Hotel
-          </button> */}
         {/* If there is a hotel ID assigned to a person's hotel state, render the following jsx */}
-        {markHotel ? (
+        {jingHotel ? (
           <div className="hotel-container">
             <h4>Featured Accomodation:</h4>
-            <h4>{markHotel.hotel_name}</h4>
-            <img src={markHotel.max_photo_url} alt="" />
+            <h4>{jingHotel.hotel_name}</h4>
+            <img src={jingHotel.max_photo_url} alt="" />
           </div>
         ) : (
           <div className="hotelcontainer">
-            <h5>Sorry, there are no available hotels at {markPlace.place} tonight.</h5>
+            <h5>Sorry, there are no available hotels at {jingPlace.place} tonight.</h5>
             <h6>Please use the search bar to choose other dates</h6>
           </div>
         )
@@ -136,26 +164,35 @@ export default function FavoritePlaces() {
       </div>
       <div className="favorite-place-container">
         <div className="favPlaceLeftCol">
-        <h2>Mark's Suggestion:</h2>
-        <h5>{markPlace.place}</h5>
+        <h2>Tiras's Suggestion:</h2>
+        <h3>{tirasPlace.place}</h3>
+        <button 
+        className="searchBtn"
+        onClick={async() => {
+          setTirasPlace(getRandomPlace(tirasPlacesArr))
+        }}
+        >
+          Choose New Place</button>
+        <button 
+        className="searchBtn"
+        onClick={() => getRandomHotels(tirasPlace, setTirasHotel)}
+        >
+          Choose New Hotel</button>
         </div>
         <div className="favPlaceMidCol">
-        <h4>Why He Loves it There:</h4>
-        <span>"{markPlace.testimonial}" -Mark</span>
+        <h2>Why He Loves it There:</h2>
+        <span>"{tirasPlace.testimonial}" -Tiras</span>
         </div>
-        {/* <button onClick={() => getRandomHotels(markPlace, setMarkHotel)}>
-            Click For Random Hotel
-          </button> */}
         {/* If there is a hotel ID assigned to a person's hotel state, render the following jsx */}
-        {markHotel ? (
+        {tirasHotel ? (
           <div className="hotel-container">
             <h4>Featured Accomodation:</h4>
-            <h4>{markHotel.hotel_name}</h4>
-            <img src={markHotel.max_photo_url} alt="" />
+            <h4>{tirasHotel.hotel_name}</h4>
+            <img src={tirasHotel.max_photo_url} alt="" />
           </div>
         ) : (
           <div className="hotelcontainer">
-            <h5>Sorry, there are no available hotels at {markPlace.place} tonight.</h5>
+            <h5>Sorry, there are no available hotels at {tirasPlace.place} tonight.</h5>
             <h6>Please use the search bar to choose other dates</h6>
           </div>
         )
