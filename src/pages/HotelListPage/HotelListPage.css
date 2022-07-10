@@ -1,0 +1,34 @@
+.listPage-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2.5vh;
+    align-items: center;
+    overflow-y: auto;
+    width: 100%;
+    /* flex-wrap: wrap; */
+}
+.listPage-container h3 {
+    color: #0071c2;
+}
+
+.listPageMainContainer {
+    display: flex;
+    /* flex-direction: column; */
+    width: 100vw;
+}
+.listPageLeftColumn {
+    flex: 1;
+}
+.listPageLeftColumn {
+    width: 100%;
+    height: 100vh; 
+}
+.listPageRightColumn {
+    flex: 2;
+    margin: 1em .5em;
+}
+
+.list-page-img {
+    width: 20vw;
+    height: 100%;
+}

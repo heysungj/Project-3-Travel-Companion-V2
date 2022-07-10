@@ -28,7 +28,7 @@
     padding: .7em;
     display: inline-block;
     border: 2px solid #febb02;
-    margin: .5em;
+    margin-top: 1.5em;
 }
 
 .edit {
@@ -84,6 +84,7 @@
 }
 .new-room img {
     margin-right: 1em;
+    border-radius: 10px;
 }
 
 .new-room h3 {
