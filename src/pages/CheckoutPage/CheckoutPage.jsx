@@ -79,9 +79,16 @@ export default function CheckoutPage() {
               <h2>Payment Info</h2>
 
               <label>Name</label>
-              <input type="text" name="name" onChange={handleChange} required />
+              <input
+                className="cardInput"
+                type="text"
+                name="name"
+                onChange={handleChange}
+                required
+              />
               <label>Card Number</label>
               <input
+                className="cardInput"
                 type="number"
                 name="cardNumber"
                 placeholder="Please enter 16 digits card number"
@@ -93,6 +100,7 @@ export default function CheckoutPage() {
               <label>Expiration Date</label>
 
               <input
+                className="cardInput"
                 type="text"
                 name="expDate"
                 onChange={handleChange}
@@ -100,6 +108,7 @@ export default function CheckoutPage() {
               />
 
               <button
+                className="payBtn"
                 type="submit"
                 disabled={cardinfo.cardNumber.length === 16 ? false : true}
               >
