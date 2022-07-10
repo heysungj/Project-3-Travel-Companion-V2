@@ -4,6 +4,8 @@
     flex-direction: column;
     background-color: #003580;
     color: white;
+    height: 15vh;
+    position: relative;
 }
 
 .navContainer{
