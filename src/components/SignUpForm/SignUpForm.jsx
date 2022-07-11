@@ -1,6 +1,7 @@
 import './SignUpForm'
 import { Component } from 'react'
 import { signUp } from '../../utilities/users-service'
+import "./SignUpForm.css"
 
 export default class SignUpForm extends Component {
     state = {
@@ -45,14 +46,14 @@ export default class SignUpForm extends Component {
                 <div className="form-container">
                     <form autoComplete="off" onSubmit={this.handleSubmit}>
                         <label>Name</label>
-                        <input type="text" name="name" value={this.state.name} onChange={this.handleChange} required />
+                        <input type="text" name="name" value={this.state.name} onChange={this.handleChange} placeholder="Mr. Travels"required />
                         <label>Email</label>
-                        <input type="email" name="email" value={this.state.email} onChange={this.handleChange} required />
+                        <input type="email" name="email" value={this.state.email} onChange={this.handleChange} placeholder="john@email.com"required />
                         <label>Password</label>
-                        <input type="password" name="password" value={this.state.password} onChange={this.handleChange} required />
+                        <input type="password" name="password" value={this.state.password} onChange={this.handleChange} placeholder="set password"required />
                         <label>Confirm</label>
-                        <input type="password" name="confirm" value={this.state.confirm} onChange={this.handleChange} required />
-                        <button type="submit" disabled={disable}>SIGN UP</button>
+                        <input type="password" name="confirm" value={this.state.confirm} onChange={this.handleChange} placeholder="confirm password"required />
+                        <button className ="submit" type="submit" disabled={disable}>SIGN UP</button>
                     </form>
                 </div>
                 <p className="error-message">&nbsp;{this.state.error}</p>
