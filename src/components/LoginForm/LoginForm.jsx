@@ -62,8 +62,8 @@ export default function LoginForm({
     <div>
       <div className="form-container" onSubmit={handleSubmit}>
         <form autoComplete="off">
-          <label>Email</label>
-          <input
+        <label className="loginFormLabels">Email</label>
+          <input className="loginFormInputs"
             type="text"
             name="email"
             value={credentials.email}
@@ -71,8 +71,8 @@ export default function LoginForm({
             required
             placeholder="john@email.com"
           />
-          <label>Password</label>
-          <input
+          <label className="loginFormLabels">Password</label>
+          <input className="loginFormInputs"
             type="password"
             name="password"
             value={credentials.password}

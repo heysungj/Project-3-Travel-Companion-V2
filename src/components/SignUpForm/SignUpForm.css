@@ -3,31 +3,31 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    margin-bottom: 10px;
+    margin-bottom: 1vw;
 }
 
-label {
+.signUpFormLabel {
     font-size: small;
     text-align: right;
-    margin-left: 0px;
+    margin-left: 0;
     display: flex;
     justify-content: left;
 }
 
-input {
-    width: 300px;
-    height: 30px;
-    margin-top: 5px;
+.signUpFormInput {
+    width: 30vw;
+    height: 3vw;
+    margin-top: 1vw;
 }
 
 
 .submit {
     background-color: rgb(37, 167, 227);
     color: white;
-    margin-top: 5px;
-    border: 0px;
-    width: 300px;
-    height: 30px;
+    margin-top: 1vw;
+    border: 0;
+    width: 30vw;
+    height: 3vw;
     display: flex;
     justify-content: center;
     

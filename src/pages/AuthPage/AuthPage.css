@@ -1,4 +1,4 @@
-.logo {
+.pageLogo {
     display: flex;
     flex: 0 0 auto;
     flex-direction: column;
@@ -12,24 +12,5 @@
 .prompt {
     text-align: center;
     margin-left: 10px;
-    color: #003580;
-}
-.navContainer{
-    display: flex;
-    color: white;
-    align-items: center;
-    justify-content: space-around;
-    margin-bottom: 10px;
-}
-
-.logos{
-    font-weight: 500;
-}
-
-.navButton{
-    margin-left: 20px;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
     color: #003580;
 }
