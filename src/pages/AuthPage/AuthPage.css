@@ -1,35 +1,23 @@
-.logo {
+.auth-main {
     display: flex;
-    flex: 0 0 auto;
     flex-direction: column;
-    background-color: #003580;
-    font-weight: 200;
-    color: white;
-    margin-bottom: 10px;
-    padding: 5px 20px;
-    border-radius: 5px;
-}
-.prompt {
-    text-align: center;
-    margin-left: 10px;
-    color: #003580;
-}
-.navContainer{
-    display: flex;
-    color: white;
     align-items: center;
-    justify-content: space-around;
-    margin-bottom: 10px;
+    justify-content: center;
+    /* overflow-y: auto; */
+    width: 100%;
 }
 
-.logos{
-    font-weight: 500;
+.logInLogo {
+    width: 100vw;
+    text-align: center;
+    font-size: 3em;
+    background-color: #003580;
+    color: white;
+    padding: .4em;
+    margin-bottom: .2em;
 }
 
-.navButton{
-    margin-left: 20px;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-    color: #003580;
+.logInBlue {
+    color: #0071c2;
+    margin-bottom: 1em;
 }

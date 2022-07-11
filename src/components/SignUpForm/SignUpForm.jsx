@@ -44,19 +44,22 @@ export default class SignUpForm extends Component {
         return (
             <div>
                 <div className="form-container">
+                    <h3>Sign Up</h3>
                     <form autoComplete="off" onSubmit={this.handleSubmit}>
                         <label>Name</label>
-                        <input type="text" name="name" value={this.state.name} onChange={this.handleChange} placeholder="Mr. Travels"required />
+                        <input type="text" name="name" value={this.state.name} onChange={this.handleChange} placeholder="Your Name" required />
                         <label>Email</label>
-                        <input type="email" name="email" value={this.state.email} onChange={this.handleChange} placeholder="john@email.com"required />
+                        <input type="email" name="email" value={this.state.email} onChange={this.handleChange} placeholder="email@email.com" required />
                         <label>Password</label>
-                        <input type="password" name="password" value={this.state.password} onChange={this.handleChange} placeholder="set password"required />
+                        <input type="password" name="password" value={this.state.password} onChange={this.handleChange} placeholder="Set Password" required />
                         <label>Confirm</label>
-                        <input type="password" name="confirm" value={this.state.confirm} onChange={this.handleChange} placeholder="confirm password"required />
-                        <button className ="submit" type="submit" disabled={disable}>SIGN UP</button>
+                        <input type="password" name="confirm" value={this.state.confirm} onChange={this.handleChange} placeholder="Confirm Password" required />
+                        <p className="error-message">&nbsp;{this.state.error}</p>
+                        <div className='loginBtn-container2'>
+                <button className="searchBtn" type="submit" disabled={disable}>SIGN UP</button>
+                </div>
                     </form>
                 </div>
-                <p className="error-message">&nbsp;{this.state.error}</p>
             </div>
         );
     }
