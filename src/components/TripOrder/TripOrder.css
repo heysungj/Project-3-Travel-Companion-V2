@@ -85,6 +85,7 @@
 .new-room img {
     margin-right: 1em;
     border-radius: 10px;
+    width: 20vw;
 }
 
 .new-room h3 {

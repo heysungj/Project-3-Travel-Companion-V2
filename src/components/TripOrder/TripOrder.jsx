@@ -75,7 +75,7 @@ export default function TripOrder({ trip }) {
         setData(newData);
     };
 
-    console.log(trip)
+    // console.log(trip)
     return (
 
         <div className="favorite-place-container">
@@ -193,9 +193,15 @@ export default function TripOrder({ trip }) {
                                         className="new-room"
                                         key={index}>
                                         <img
+                                            className="new-room-img"
                                             src={roomPhoto[room.room_id].photos[0].url_original}
                                             alt=""
                                         />
+                                        <button
+                                            className='editBtn'
+                                            onClick={() => { handleEdit(room) }}>
+                                            Change to This Room
+                                        </button>
                                         <div>
                                             <h3>{room.name}</h3>
                                             <h4>Check-in: {data.checkIn}</h4>
@@ -205,11 +211,6 @@ export default function TripOrder({ trip }) {
                                             <h4>Max Occupancy: {room.max_occupancy}</h4>
                                             <h4>Total Cost: $ {room.price_breakdown.gross_price}</h4>
                                         </div>
-                                        <button
-                                            className='editBtn'
-                                            onClick={() => { handleEdit(room) }}>
-                                            Change to This Room
-                                        </button>
                                     </div>
                                 );
                             })
