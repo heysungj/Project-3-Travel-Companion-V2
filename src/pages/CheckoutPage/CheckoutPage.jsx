@@ -19,6 +19,7 @@ export default function CheckoutPage() {
     hotelPhoto,
     hotel_id,
     numberOfPerson,
+    markers,
   } = state;
 
   const handleChange = (e) => {
@@ -50,13 +51,29 @@ export default function CheckoutPage() {
             <h4>{checkOut}</h4>
             <p>You selected</p>
             <h4>{room.name}</h4>
-            <Link
-              to={`/hotels/${hotel_id}?checkin=${checkIn}&checkout=${checkOut}&numberOfPerson=${numberOfPerson}`}
+            <button
+              className="link"
+              style={{ fontWeight: "500" }}
+              onClick={() => {
+                navigate(
+                  `/hotels/${hotel.hotel_id}?checkin=${checkIn}&checkout=${checkOut}&numberOfPerson=${numberOfPerson}`,
+                  {
+                    state: {
+                      markers,
+                    },
+                  }
+                );
+              }}
             >
-              <button className="link" style={{ fontWeight: "500" }}>
+              Change Your Selection
+            </button>
+            {/* <Link
+              to={`/hotels/${hotel_id}?checkin=${checkIn}&checkout=${checkOut}&numberOfPerson=${numberOfPerson}`}
+            > */}
+            {/* <button className="link" style={{ fontWeight: "500" }}>
                 Change Your Selection
               </button>
-            </Link>
+            </Link> */}
           </div>
 
           <div className="priceDetail">
