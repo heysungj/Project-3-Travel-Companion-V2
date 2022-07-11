@@ -1,0 +1,64 @@
+
+.form-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+
+label {
+    font-size: small;
+    text-align: right;
+    margin-left: 0px;
+    display: flex;
+    justify-content: left;
+}
+
+input {
+    width: 300px;
+    height: 30px;
+    margin-top: 5px;
+}
+
+
+.submit {
+    background-color: rgb(37, 167, 227);
+    color: white;
+    margin-top: 10px;
+    border: 0px;
+    width: 300px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 10px;
+    
+}
+
+.notReg {
+    background-color: rgb(37, 167, 227);
+    color: white;
+    margin-top: 10px;
+    border: 0px;
+    width: 300px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 10px;
+    margin-left: 38%;
+}
+
+#signInDiv {
+    justify-content: center;
+    width: 300px;
+    margin-left: 38%;
+}

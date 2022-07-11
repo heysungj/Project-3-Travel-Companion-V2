@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import * as usersService from "../../utilities/users-service";
 import jwt_decode from "jwt-decode";
+import "./LoginForm.css"
 
 export default function LoginForm({
   setUser,
@@ -68,6 +69,7 @@ export default function LoginForm({
             value={credentials.email}
             onChange={handleChange}
             required
+            placeholder="john@email.com"
           />
           <label>Password</label>
           <input
@@ -76,12 +78,13 @@ export default function LoginForm({
             value={credentials.password}
             onChange={handleChange}
             required
+            placeholder="enter password"
           />
-          <button type="submit">LOG IN</button>
+          <button className="submit" type="submit">Sign in with Email</button>
         </form>
       </div>
       <p className="error-message">&nbsp;{error}</p>
-      <button onClick={() => setShowSignUpForm(!showSignUpForm)}>
+      <button className="notReg" onClick={() => setShowSignUpForm(!showSignUpForm)}>
         Not Registered? Sign Up
       </button>
 
