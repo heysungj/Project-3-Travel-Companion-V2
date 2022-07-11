@@ -38,8 +38,8 @@ export default function HotelsListPage() {
       <h1>Available Hotels at {searchResult[0].city}</h1>
       <h3>For {checkIn} to {checkOut}</h3>
       <div className="listPageMainContainer">
-        <div className="listPageLeftColumn">
-          <Map
+         <div className="listPage-map">
+         <Map
             // The lat and lng are passed to map to render map centered on city that was searched for
             lat={coordinates.lat}
             lng={coordinates.lng}
@@ -48,8 +48,8 @@ export default function HotelsListPage() {
             checkOut={checkOut}
             numberOfPerson={numberOfPerson}
           />
-        </div>
-        <div className="listPageRightColumn">
+         </div>
+          
           {searchResult.map((hotel) => {
             const filterMarker = (marker) => {
               return marker.name === hotel.hotel_name;
@@ -68,7 +68,6 @@ export default function HotelsListPage() {
               />
             );
           })}
-        </div>
       </div>
     </div>
   );

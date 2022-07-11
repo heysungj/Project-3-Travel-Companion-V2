@@ -3,6 +3,7 @@
     flex-direction: column;
     margin-top: 2.5vh;
     align-items: center;
+    /* justify-content: center; */
     overflow-y: auto;
     width: 100%;
     /* flex-wrap: wrap; */
@@ -13,18 +14,26 @@
 
 .listPageMainContainer {
     display: flex;
-    /* flex-direction: column; */
-    width: 100vw;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
+
+.listPage-map {
+    height: 50vh;
+    width: 70vw;
+    margin-top: 2em;
+    border-radius: 3px solid #003580;
+}
+
 .listPageLeftColumn {
     flex: 1;
 }
 .listPageLeftColumn {
-    width: 100%;
+    width: 33vw;
     height: 100vh; 
 }
 .listPageRightColumn {
-    flex: 2;
+    flex: 66vw;
     margin: 1em .5em;
 }
-
