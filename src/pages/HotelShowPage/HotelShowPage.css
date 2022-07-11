@@ -21,6 +21,7 @@
     flex-direction: column;
     flex: 5;
     margin: 0 10px;
+    background-color: white;
 }
 .listWrapper{
     display: flex;

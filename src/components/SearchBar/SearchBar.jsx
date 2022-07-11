@@ -159,7 +159,7 @@ export default function SearchBar() {
               name="checkIn"
               value={data.checkIn}
               onChange={changeData}
-              placeholder="Checkin Date"
+              placeholder="Check-in Date"
               required
             />
           </div>
@@ -185,6 +185,7 @@ export default function SearchBar() {
               value={data.numberOfAdult}
               onChange={changeData}
               placeholder="Number of people"
+              style={{ width: "2em"}}
               required
             />
             {/* <button onClick={handleClickAdd}>+</button> */}

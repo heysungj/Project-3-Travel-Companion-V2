@@ -69,7 +69,9 @@ export default function CheckoutPage() {
         <div className="rightContainer">
           <div className="hotelInfoContainer">
             <div className="checkoutHotelImg">
-              <img src={hotelPhoto} alt="" />
+              <img 
+              className="list-page-img"
+              src={hotelPhoto} alt="" />
             </div>
             <div>
               <h2>{hotel.name}</h2>

@@ -42,9 +42,21 @@ export const jingPlacesArr = [
 
 export const tirasPlacesArr = [
   {
+    place: "Donceles, Cancun, Mexico",
+    latitude: "19.4360663",
+    longitude: "-99.13431190000001",
+    testimonial: "Cancun availed life changing experiences for me, cavern swimming, Mayan Ruins, and authentic cuisine. Cancun is a must see, for everyone.",
+  },
+  {
+    place: "Annapolis, Maryland, USA",
+    latitude: "38.9729",
+    longitude: "-76.5012",
+    testimonial: "The culture, history, and American Heritage that Annapolis offers is exceptional. The Graduate Hotel is such a cool Place to stay.",
+  },
+  {
     place: "Cumberland, Maryland, USA",
     latitude: "39.6528654",
     longitude: "-78.7625185",
-    testimonial: "Home sweet home!",
+    testimonial: "There's no place quite like Western Maryland. The Outdoors Attractions here are endless, the people here, the culture here, and the views are a treasure.  ",
   },
 ];
