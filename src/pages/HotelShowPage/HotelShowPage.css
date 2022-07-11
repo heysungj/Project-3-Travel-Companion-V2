@@ -66,6 +66,9 @@
 .roomList {
     display: flex;
     margin: 10px 0;
+    border: 2px solid #febb02;
+    padding: 1em;
+    border-radius: 10px;
 }
 
 .roomPhotoContainer {
@@ -76,6 +79,8 @@
 
 .roomPhoto {
     border-radius: 5px;
+    height: 30vh;
+    width: 20vw;
 }
 
 .roomDetail {

@@ -7,15 +7,21 @@ input::-webkit-inner-spin-button {
 
 .checkoutMainContainer{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 1em;
+  flex-direction: row;
+  flex: 1 1 auto;
+  position: relative;
+  overflow-y: auto;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
 }
 
 .checkoutContainer{
   display: flex;
   flex-direction: row;
   margin-top: 1em;
+  justify-content: center;
+
 }
 
 .leftContainer{
@@ -38,8 +44,12 @@ input::-webkit-inner-spin-button {
 
 .hotelInfoContainer{
   display: flex;
-  flex-direction: row;
+  /* flex-direction: row; */
   width: 55vw;
+  border: 2px solid #febb02;
+  border-radius: 10px;
+  padding: 1em;
+  flex-wrap: wrap;
 }
 .reviewBtn{
   background-color: #0071c2;
@@ -52,12 +62,14 @@ input::-webkit-inner-spin-button {
 }
 
 .cardContainer{
+  margin: 1em 0;
   background-color: #ebf3ff;
   display: flex;
   flex-direction: column;
-justify-content: center;
 align-items: center;
-width: 55wm;
+width: 55vw;
+padding: 1em;
+border-radius: 10px;
 }
 
 .cardInput{
@@ -77,16 +89,17 @@ width: 55wm;
   border:none;
   padding: 12px;
   cursor:pointer;
-  width: 20em;
+  width: 25vw;
   margin: 0.5em;
   font-size: medium;
 }
 
 .bookingDetail{
   border: 2px solid lightgray;
-  margin: 0.5em;
+  margin: 0 0.5em;
   width: 40vm;
   padding: 1em;
+  border-radius: 10px;
 }
 
 .priceDetail{
@@ -94,4 +107,5 @@ width: 55wm;
   margin: 0.5em;
   width: 40vm;
   padding: 1em;
+  border-radius: 10px;
 }
