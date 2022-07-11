@@ -28,15 +28,16 @@
     padding: .7em;
     display: inline-block;
     border: 2px solid #febb02;
-    margin: .5em;
+    margin-top: 1.5em;
 }
 
 .edit {
-    background-color: aquamarine;
-    padding: .7em;
+    /* background-color: aquamarine; */
+    padding: 1em;
     display: inline-block;
-    border: 2px solid #febb02;
+    /* border: 2px solid #0071c2; */
     margin: .8em;
+    border-radius: 10px;
 }
 
 .cancelBtn {
@@ -47,4 +48,45 @@
     padding: 10px;
     cursor:pointer;
     margin-right: .6em;
+    border-radius: 10px;
+}
+
+.editBtn {
+    background-color: #0071c2;
+    color: white;
+    font-weight: 500;
+    border:none;
+    padding: 10px;
+    cursor:pointer;
+    margin-right: .6em;
+    border-radius: 10px;
+    height: 3.5rem;
+    width: 7rem;
+    text-align: center;
+    align-self: center;
+    position: absolute;
+    right: 2em;
+    bottom: 2em;
+}
+
+.edit-order-rooms {
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+}
+
+.new-room {
+    display: flex;
+    margin-bottom: 2em;
+    border: 1px solid #003580;
+    padding: 1em;
+    position: relative;
+}
+.new-room img {
+    margin-right: 1em;
+    border-radius: 10px;
+}
+
+.new-room h3 {
+    color: #0071c2;
 }

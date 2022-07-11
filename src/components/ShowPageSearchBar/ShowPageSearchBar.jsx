@@ -74,7 +74,7 @@ export default function ShowPageSearchBar({
         />
       </div>
       <div>
-        <label>Number of People</label>
+        <label>Number of Guests</label>
 
         <input
           className="SearchInput"
