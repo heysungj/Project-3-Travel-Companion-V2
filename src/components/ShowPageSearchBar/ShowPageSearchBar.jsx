@@ -9,6 +9,8 @@ export default function ShowPageSearchBar({
   hotel_id,
   setRoomPhoto,
   setRooms,
+  setCheckIn,
+  setCheckOut
 }) {
   // console.log(searchMarkers)
   const starterData = {
@@ -27,6 +29,14 @@ export default function ShowPageSearchBar({
     };
     setData(newData);
     // conditons for checkin checkout date
+
+    if (e.target.name === 'checkIn') {
+      setCheckIn(e.target.value);
+    }
+
+    if (e.target.name === 'checkOut') {
+      setCheckOut(e.target.value);
+    }
 
     const today = new Date();
     const yesterday = new Date(today);

@@ -6,6 +6,7 @@ import ShowPageSearchBar from "../../components/ShowPageSearchBar/ShowPageSearch
 import Map from "../../components/Map/Map";
 import "./HotelShowPage.css";
 export default function HotelShowPage() {
+  const queryParams = new URLSearchParams(window.location.search);
   // hotel data
   const [hotel, setHotel] = useState({});
   // rooms list data
@@ -14,21 +15,18 @@ export default function HotelShowPage() {
   const [photos, setPhotos] = useState([]);
   // room info contains photos
   const [roomPhoto, setRoomPhoto] = useState([]);
-  const [reviews, setReviews] = useState({});
+  // get checkin and checkout date from query
+  const [checkIn, setCheckIn] = useState(queryParams.get("checkin"));
+  const [checkOut, setCheckOut] = useState(queryParams.get("checkout"));
 
   // use navigate
   const navigate = useNavigate();
   const { hotel_id } = useParams();
   const { state } = useLocation();
   let { markers } = state;
-  console.log(markers);
   const [marker, setMarkers] = useState([markers.marker]);
   const [lat, setLat] = useState(marker[0].lat);
   const [lng, setLng] = useState(marker[0].lng);
-  // get checkin and checkout date from query
-  const queryParams = new URLSearchParams(window.location.search);
-  const checkIn = queryParams.get("checkin");
-  const checkOut = queryParams.get("checkout");
   const numberOfPerson = queryParams.get("numberOfPerson");
 
   //any time page re-renders it will get the hotel data
@@ -77,6 +75,8 @@ export default function HotelShowPage() {
         <ShowPageSearchBar
           checkIn={checkIn}
           checkOut={checkOut}
+          setCheckIn={setCheckIn}
+          setCheckOut={setCheckOut}
           numberOfPerson={numberOfPerson}
           hotel_id={hotel_id}
           setRoomPhoto={setRoomPhoto}
