@@ -3,31 +3,28 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    margin-bottom: 10px;
+    margin-bottom: 10vw;
 }
 
-label {
+.loginFormLabels {
     font-size: small;
-    text-align: right;
-    margin-left: 0px;
     display: flex;
-    justify-content: left;
 }
 
-input {
-    width: 300px;
-    height: 30px;
-    margin-top: 5px;
+.loginFormInputs {
+    width: 30vw;
+    height: 3vw;
+    margin-top: 1vw;
 }
 
 
 .submit {
     background-color: rgb(37, 167, 227);
     color: white;
-    margin-top: 10px;
-    border: 0px;
-    width: 300px;
-    height: 30px;
+    margin-top: 1vw;
+    border: 0;
+    width: 20vw;
+    height: 3vw;
     display: flex;
     justify-content: center;
     align-self: center;
@@ -35,17 +32,16 @@ input {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    margin-bottom: 10px;
-    
+    margin-left: 17%;    
 }
 
 .notReg {
     background-color: rgb(37, 167, 227);
     color: white;
-    margin-top: 10px;
-    border: 0px;
-    width: 300px;
-    height: 30px;
+    margin-top: 1vw;
+    border: 0;
+    width: 30vw;
+    height: 3vw;
     display: flex;
     justify-content: center;
     align-self: center;
@@ -53,12 +49,13 @@ input {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    margin-bottom: 10px;
-    margin-left: 38%;
+    margin-bottom: 1vw;
+    margin-left: 35%;
 }
+
 
 #signInDiv {
     justify-content: center;
-    width: 300px;
-    margin-left: 38%;
+    width: 30vw;
+    margin-left: 35%;
 }
